@@ -1,0 +1,26 @@
+<nav class="navbar navbar-dark bg-primary">
+  <a class="navbar-brand" href="/">Angular Links</a>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2 p-4">
+      <div class="card ">
+        <h3 class="card-header">Add a link</h3>
+        <form class="card-body" action="" >
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" name="title" class="form-control" #title autofocus>
+          </div>
+          <div class="form-group">
+            <label for="link">Link</label>
+            <input type="text" name="link" class="form-control" #link>
+          </div>
+          <button class="btn btn-primary btn-block" (click)="addLink(title, link)">
+            Submit link
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+    <app-link  *ngFor="let link of links" [link]="link"></app-link>
+</div>
